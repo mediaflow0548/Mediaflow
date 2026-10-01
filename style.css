@@ -1593,7 +1593,7 @@ a {
     outline-offset: 4px;
 }
 
-/* De titel en sterren houden hun oorspronkelijke losse hover-effect. */
+/* De reviewtitel reageert op hover; de sterren blijven goudkleurig. */
 .footer-review-link h4 {
     margin: 0 0 12px;
     transition: color 0.2s ease;
@@ -1613,7 +1613,6 @@ a {
 }
 
 .footer-review-link .footer-review-stars:hover {
-    color: #ffffff;
     transform: translateY(-2px);
 }
 
