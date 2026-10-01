@@ -1593,14 +1593,16 @@ a {
     outline-offset: 4px;
 }
 
-/* De reviewtitel reageert op hover; de sterren blijven goudkleurig. */
-.footer-review-link h4 {
-    margin: 0 0 12px;
-    transition: color 0.2s ease;
+/* Het bedrijfsprofiel blijft volledig statisch: geen hover- of overgangsanimaties. */
+.footer-review-link,
+.footer-review-link * {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
 }
 
-.footer-review-link h4:hover {
-    color: #d9e7de;
+.footer-review-link h4 {
+    margin: 0 0 12px;
 }
 
 .footer-review-link .footer-review-stars {
@@ -1609,11 +1611,6 @@ a {
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.footer-review-link .footer-review-stars:hover {
-    transform: translateY(-2px);
 }
 
 @media (max-width: 560px) {
