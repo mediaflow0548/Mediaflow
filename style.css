@@ -1709,8 +1709,14 @@ a {
     cursor: pointer;
 }
 
+/* Alleen het certificaat maakt bij hover een kleine visuele lift. */
+.certificate-button img {
+    transition: transform 160ms ease, background-color 160ms ease;
+}
+
 .certificate-button:hover img {
     background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
 }
 
 .certificate-lightbox {
