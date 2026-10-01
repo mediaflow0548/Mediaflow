@@ -1605,7 +1605,10 @@ a {
     margin: 0 0 12px;
 }
 
-.footer-review-link .footer-review-stars {
+/* De sterren behouden hun goudkleur, ook wanneer de hele footerlink wordt aangewezen. */
+.footer-review-link .footer-review-stars,
+.footer-review-link:hover .footer-review-stars,
+.footer-review-link:focus-visible .footer-review-stars {
     color: #f5c542;
     font-size: 1.4rem;
     font-weight: 700;
