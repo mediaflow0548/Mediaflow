@@ -1518,12 +1518,20 @@ a {
 }
 /* ===== EINDE MOTION ===== */
 
-/* Certificaat-badge in de footer */
+/* Certificaat en review-uitnodiging in één gedeeld footerblok. */
 .footer-certificate {
     max-width: var(--max-width);
     margin: 20px auto 0;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-certificate-content {
+    display: flex;
+    /* De titels van certificaat en review beginnen op dezelfde hoogte. */
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
 }
 
 .footer-certificate h4 {
@@ -1561,6 +1569,77 @@ a {
 
 .footer-certificate a:hover span {
     color: #ffffff;
+}
+
+/* De reviewkaart heeft rondom de tekst en sterren extra klikruimte. */
+.footer-review {
+    text-align: right;
+}
+
+.footer-review .footer-review-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+    padding: 10px 14px;
+    margin: -10px -14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Een toetsenbordgebruiker ziet wel duidelijk welke link actief is. */
+.footer-review-link:focus-visible {
+    outline: 2px solid #d9e7de;
+    outline-offset: 4px;
+}
+
+.footer-review-link h4 {
+    margin: 0 0 12px;
+}
+
+/* De sterren blijven goudkleurig en kunnen los van de tekst bewegen. */
+.footer-review-link .footer-review-stars {
+    display: inline-block;
+    color: #f5c542;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    transform: translateY(0);
+    transition: transform 0.25s ease;
+}
+
+/* De algemene footer-hover mag de vaste goudkleur van de sterren niet overschrijven. */
+.footer-review-link:hover .footer-review-stars,
+.footer-review-link:focus-visible .footer-review-stars {
+    color: #f5c542;
+}
+
+/* Bij aanwijzen van de hele klikzone komen de sterren subtiel omhoog. */
+@media (prefers-reduced-motion: no-preference) {
+    .footer-review-link:hover .footer-review-stars,
+    .footer-review-link:focus-visible .footer-review-stars {
+        transform: translateY(-5px);
+    }
+}
+
+/* Respecteer een voorkeur voor minder beweging ook bij toetsenbordfocus. */
+@media (prefers-reduced-motion: reduce) {
+    .footer-review-link .footer-review-stars {
+        transition: none;
+    }
+}
+
+@media (max-width: 560px) {
+    /* Op smalle schermen blijft de inhoud leesbaar onder elkaar staan. */
+    .footer-certificate-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-review {
+        text-align: left;
+    }
 }
 
 /* ==================================================================
@@ -1630,8 +1709,14 @@ a {
     cursor: pointer;
 }
 
+/* Alleen het certificaat maakt bij hover een kleine visuele lift. */
+.certificate-button img {
+    transition: transform 160ms ease, background-color 160ms ease;
+}
+
 .certificate-button:hover img {
     background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
 }
 
 .certificate-lightbox {
