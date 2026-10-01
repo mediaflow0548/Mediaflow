@@ -1571,22 +1571,34 @@ a {
     color: #ffffff;
 }
 
-/* De reviewtitel en sterren zijn los klikbaar, maar openen dezelfde link. */
+/* De reviewkaart heeft rondom de tekst en sterren extra klikruimte. */
 .footer-review {
     text-align: right;
 }
 
-.footer-review h4 a {
+.footer-review-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    padding: 10px 14px;
+    margin: -10px -14px;
+    border-radius: 12px;
     color: #ffffff;
     text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
-.footer-review h4 a:hover,
-.footer-review h4 a:focus-visible {
-    color: #d9e7de;
+.footer-review-link:hover,
+.footer-review-link:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
 }
 
-.footer-review .footer-review-stars {
+.footer-review-link h4 {
+    margin: 0;
+}
+
+.footer-review-link .footer-review-stars {
     color: #f5c542;
     font-size: 1.4rem;
     font-weight: 700;
@@ -1595,8 +1607,8 @@ a {
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.footer-review .footer-review-stars:hover,
-.footer-review .footer-review-stars:focus-visible {
+.footer-review-link:hover .footer-review-stars,
+.footer-review-link:focus-visible .footer-review-stars {
     color: #ffffff;
     transform: translateY(-2px);
 }

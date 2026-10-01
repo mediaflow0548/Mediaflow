@@ -389,9 +389,11 @@ function buildFooter() {
                     </button>
                 </div>
                 <div class="footer-review">
-                    <!-- Beide review-elementen openen rechtstreeks het Google-reviewformulier. -->
-                    <h4><a href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener">${t.leaveReview}</a></h4>
-                    <a class="footer-review-stars" href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener" aria-label="${t.leaveReview}">★★★★★</a>
+                    <!-- De hele reviewkaart opent hetzelfde Google-bedrijfsprofiel. -->
+                    <a class="footer-review-link" href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener" aria-label="${t.leaveReview}">
+                        <h4>${t.leaveReview}</h4>
+                        <span class="footer-review-stars" aria-hidden="true">★★★★★</span>
+                    </a>
                 </div>
             </div>
         </div>
