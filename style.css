@@ -1609,6 +1609,12 @@ a {
     transition: transform 0.25s ease;
 }
 
+/* De algemene footer-hover mag de vaste goudkleur van de sterren niet overschrijven. */
+.footer-review-link:hover .footer-review-stars,
+.footer-review-link:focus-visible .footer-review-stars {
+    color: #f5c542;
+}
+
 /* Bij aanwijzen van de hele klikzone komen de sterren subtiel omhoog. */
 @media (prefers-reduced-motion: no-preference) {
     .footer-review-link:hover .footer-review-stars,
