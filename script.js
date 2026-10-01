@@ -61,8 +61,7 @@ const I18N = {
         legalTitle: 'Juridisch',
         certificate: 'Dronecertificaat A1/A3',
         viewCertificate: 'Bekijk certificaat',
-        reviewTitle: 'Ervaring met Mediaflow?',
-        leaveReview: 'Laat een Google-review achter',
+        leaveReview: 'Laat een review achter',
         privacy: 'Privacyverklaring',
         disclaimer: 'Disclaimer',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -83,8 +82,7 @@ const I18N = {
         legalTitle: 'Legal',
         certificate: 'Drone certificate A1/A3',
         viewCertificate: 'View certificate',
-        reviewTitle: 'Experience with Mediaflow?',
-        leaveReview: 'Leave a Google review',
+        leaveReview: 'Leave a review',
         privacy: 'Privacy Policy',
         disclaimer: 'Disclaimer',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -105,8 +103,7 @@ const I18N = {
         legalTitle: 'Rechtliches',
         certificate: 'Drohnenzertifikat A1/A3',
         viewCertificate: 'Zertifikat ansehen',
-        reviewTitle: 'Erfahrung mit Mediaflow?',
-        leaveReview: 'Google-Bewertung hinterlassen',
+        leaveReview: 'Bewertung hinterlassen',
         privacy: 'Datenschutzerklärung',
         disclaimer: 'Haftungsausschluss',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -127,8 +124,7 @@ const I18N = {
         legalTitle: 'Mentions légales',
         certificate: 'Certificat de drone A1/A3',
         viewCertificate: 'Voir le certificat',
-        reviewTitle: 'Votre expérience avec Mediaflow ?',
-        leaveReview: 'Laisser un avis Google',
+        leaveReview: 'Laisser un avis',
         privacy: 'Politique de confidentialité',
         disclaimer: 'Avertissement',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -393,8 +389,9 @@ function buildFooter() {
                     </button>
                 </div>
                 <div class="footer-review">
-                    <h4>${t.reviewTitle}</h4>
-                    <a href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener">${t.leaveReview}</a>
+                    <!-- Beide review-elementen openen rechtstreeks het Google-reviewformulier. -->
+                    <h4><a href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener">${t.leaveReview}</a></h4>
+                    <a class="footer-review-stars" href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener" aria-label="${t.leaveReview}">★★★★★</a>
                 </div>
             </div>
         </div>

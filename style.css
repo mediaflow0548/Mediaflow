@@ -1528,7 +1528,8 @@ a {
 
 .footer-certificate-content {
     display: flex;
-    align-items: flex-end;
+    /* De titels van certificaat en review beginnen op dezelfde hoogte. */
+    align-items: flex-start;
     justify-content: space-between;
     gap: 24px;
 }
@@ -1570,27 +1571,32 @@ a {
     color: #ffffff;
 }
 
-/* De reviewlink staat rechts en oogt als een compacte CTA-knop. */
+/* De reviewtitel en sterren zijn los klikbaar, maar openen dezelfde link. */
 .footer-review {
     text-align: right;
 }
 
-.footer-review a {
-    display: inline-flex;
-    align-items: center;
-    min-height: 42px;
-    padding: 0 18px;
-    border-radius: 999px;
-    background: var(--green-700);
+.footer-review h4 a {
     color: #ffffff;
-    font-weight: 700;
-    font-size: 0.88rem;
-    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
 }
 
-.footer-review a:hover,
-.footer-review a:focus-visible {
-    background: var(--green-900);
+.footer-review h4 a:hover,
+.footer-review h4 a:focus-visible {
+    color: #d9e7de;
+}
+
+.footer-review .footer-review-stars {
+    color: #f5c542;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-review .footer-review-stars:hover,
+.footer-review .footer-review-stars:focus-visible {
     color: #ffffff;
     transform: translateY(-2px);
 }
