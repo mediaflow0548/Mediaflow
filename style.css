@@ -1593,27 +1593,35 @@ a {
     outline-offset: 4px;
 }
 
-/* Het bedrijfsprofiel blijft volledig statisch: geen hover- of overgangsanimaties. */
-.footer-review-link,
-.footer-review-link * {
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-}
-
 .footer-review-link h4 {
     margin: 0 0 12px;
 }
 
-/* De sterren behouden hun goudkleur, ook wanneer de hele footerlink wordt aangewezen. */
-.footer-review-link .footer-review-stars,
-.footer-review-link:hover .footer-review-stars,
-.footer-review-link:focus-visible .footer-review-stars {
+/* De sterren blijven goudkleurig en kunnen los van de tekst bewegen. */
+.footer-review-link .footer-review-stars {
+    display: inline-block;
     color: #f5c542;
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 2px;
     line-height: 1;
+    transform: translateY(0);
+    transition: transform 0.25s ease;
+}
+
+/* Bij aanwijzen van de hele klikzone komen de sterren subtiel omhoog. */
+@media (prefers-reduced-motion: no-preference) {
+    .footer-review-link:hover .footer-review-stars,
+    .footer-review-link:focus-visible .footer-review-stars {
+        transform: translateY(-5px);
+    }
+}
+
+/* Respecteer een voorkeur voor minder beweging ook bij toetsenbordfocus. */
+@media (prefers-reduced-motion: reduce) {
+    .footer-review-link .footer-review-stars {
+        transition: none;
+    }
 }
 
 @media (max-width: 560px) {
