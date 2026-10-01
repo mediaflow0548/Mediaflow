@@ -1518,12 +1518,19 @@ a {
 }
 /* ===== EINDE MOTION ===== */
 
-/* Certificaat-badge in de footer */
+/* Certificaat en review-uitnodiging in één gedeeld footerblok. */
 .footer-certificate {
     max-width: var(--max-width);
     margin: 20px auto 0;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-certificate-content {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
 }
 
 .footer-certificate h4 {
@@ -1561,6 +1568,43 @@ a {
 
 .footer-certificate a:hover span {
     color: #ffffff;
+}
+
+/* De reviewlink staat rechts en oogt als een compacte CTA-knop. */
+.footer-review {
+    text-align: right;
+}
+
+.footer-review a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: var(--green-700);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.88rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-review a:hover,
+.footer-review a:focus-visible {
+    background: var(--green-900);
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 560px) {
+    /* Op smalle schermen blijft de inhoud leesbaar onder elkaar staan. */
+    .footer-certificate-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-review {
+        text-align: left;
+    }
 }
 
 /* ==================================================================

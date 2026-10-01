@@ -61,6 +61,8 @@ const I18N = {
         legalTitle: 'Juridisch',
         certificate: 'Dronecertificaat A1/A3',
         viewCertificate: 'Bekijk certificaat',
+        reviewTitle: 'Ervaring met Mediaflow?',
+        leaveReview: 'Laat een Google-review achter',
         privacy: 'Privacyverklaring',
         disclaimer: 'Disclaimer',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -81,6 +83,8 @@ const I18N = {
         legalTitle: 'Legal',
         certificate: 'Drone certificate A1/A3',
         viewCertificate: 'View certificate',
+        reviewTitle: 'Experience with Mediaflow?',
+        leaveReview: 'Leave a Google review',
         privacy: 'Privacy Policy',
         disclaimer: 'Disclaimer',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -101,6 +105,8 @@ const I18N = {
         legalTitle: 'Rechtliches',
         certificate: 'Drohnenzertifikat A1/A3',
         viewCertificate: 'Zertifikat ansehen',
+        reviewTitle: 'Erfahrung mit Mediaflow?',
+        leaveReview: 'Google-Bewertung hinterlassen',
         privacy: 'Datenschutzerklärung',
         disclaimer: 'Haftungsausschluss',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -121,6 +127,8 @@ const I18N = {
         legalTitle: 'Mentions légales',
         certificate: 'Certificat de drone A1/A3',
         viewCertificate: 'Voir le certificat',
+        reviewTitle: 'Votre expérience avec Mediaflow ?',
+        leaveReview: 'Laisser un avis Google',
         privacy: 'Politique de confidentialité',
         disclaimer: 'Avertissement',
         copyright: '© 2026 Mediaflow — Jaap Spakman',
@@ -375,11 +383,20 @@ function buildFooter() {
             </div>
         </div>
         <div class="footer-certificate">
-            <h4>${t.certificate}</h4>
-            <button type="button" class="certificate-button" aria-label="${t.certificate}">
-                <img src="${rootPrefix}assets/drone-certificaat.jpg" alt="Dronecertificaat A1/A3">
-                <span>${t.viewCertificate}</span>
-            </button>
+            <!-- Certificaat en review-uitnodiging staan samen in één footerblok. -->
+            <div class="footer-certificate-content">
+                <div class="footer-certificate-item">
+                    <h4>${t.certificate}</h4>
+                    <button type="button" class="certificate-button" aria-label="${t.certificate}">
+                        <img src="${rootPrefix}assets/drone-certificaat.jpg" alt="Dronecertificaat A1/A3">
+                        <span>${t.viewCertificate}</span>
+                    </button>
+                </div>
+                <div class="footer-review">
+                    <h4>${t.reviewTitle}</h4>
+                    <a href="https://g.page/r/CStjuBsTYQTjEBM/review" target="_blank" rel="noopener">${t.leaveReview}</a>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">${t.copyright}</div>
     `;
